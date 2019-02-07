@@ -2,4 +2,6 @@
 
 - Nodejs
 - MongoDB
-- Nodemon for Develop
+
+# How to run
+- just: docker-compose up, and you're ready to go!
