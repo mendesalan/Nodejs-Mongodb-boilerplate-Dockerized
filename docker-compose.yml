@@ -1,17 +1,23 @@
 version: '3.3'
 services:
   db:
+    container_name: mongoDB
     image: mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
   node:
+    container_name: nodeJS
     build: .
     ports:
       - 3000:3000
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+    links:
+      - db
     depends_on:
       - db
