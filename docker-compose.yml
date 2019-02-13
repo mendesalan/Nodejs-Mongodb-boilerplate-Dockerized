@@ -21,3 +21,6 @@ services:
       - db
     depends_on:
       - db
+
+  app:
+    build: ./app
